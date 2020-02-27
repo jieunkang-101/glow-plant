@@ -16,11 +16,14 @@ namespace PlantCare
       Console.WriteLine("Does this plant enjoy the sunshine? [Y or N]");
       string type = Console.ReadLine();
       Console.WriteLine("How many hours a day is your plant in the sun?");
-      int sunshine = int.Parse(Console.ReadLine());
+      string stringSunshine = Console.ReadLine());
+      int sunshine = int.Parse(stringSunshine);
       Console.WriteLine("How many inches tall is your plant?");
-      int height = int.Parse(Console.ReadLine());
+      string stringHeight = Console.ReadLine();
+      int height = int.Parse(stringHeight);
       Console.WriteLine("On a scale of 1-100, how healthy is your plant?");
-      int health = int.Parse(Console.ReadLine());
+      string stringHealth = Console.ReadLine();
+      int health = int.Parse(stringHealth);
       Console.WriteLine("How much water do you give the plant a week?");
       int water = int.Parse(Console.ReadLine());
       Console.WriteLine("How many times do you apply fertilize a month?");
