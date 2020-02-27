@@ -31,7 +31,6 @@ namespace PlantCare
       PlantList.Add(userPlant);
       Console.WriteLine(userPlant.Name);
       ShowPlants();
-     
       AddAction();
     }
 
@@ -42,7 +41,6 @@ namespace PlantCare
       
       if (actionResponse == "keep")
       {
-        // SearchPlants();
         Console.WriteLine("Which plant would you like to Care for?");
         string searchName = Console.ReadLine();
         foreach (Plants foliage in PlantList)
@@ -55,13 +53,9 @@ namespace PlantCare
               Console.WriteLine("How many times do you apply fertilize a month?");
               int feed = int.Parse(Console.ReadLine());
               foliage.GrowPlants();
-              ShowEachPlants();
+              ShowPlants();
               AddAction();
-            } 
-          else
-          {
-
-          }
+            }
         }    
       }
       else if (actionResponse == "add")
@@ -71,6 +65,11 @@ namespace PlantCare
       else if(actionResponse == "finish")
       {
         Console.WriteLine("Goodbye.");
+      }
+      else 
+      {
+        Console.WriteLine("Please enter keep, add or finish.\n");
+        AddAction();
       }
     }
 
