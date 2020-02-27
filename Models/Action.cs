@@ -12,8 +12,6 @@ namespace Action.Models
     public int Feed { get; set; }
     public int Sunshine { get; set; }
 
-   
-
     public Plants(string name, string type, int height, int health, int water, int feed, int sunshine)
     {
       Name = name;
@@ -24,26 +22,6 @@ namespace Action.Models
       Feed = feed;
       Sunshine = sunshine;
     }
-    // public void AddList(string name, string type, int height, int health, int water, int feed, int sunshine)
-    // {
-    //   PlantList.Add(new PlantList { Name = name, Type = type, Height = height, Water = water, Feed = feed, Sunshine = sunshine});
-    // }
-    // public void AddList()
-    // {
-    //   List<Plants> PlantList = new List<Plants>(){};
-    //   newPlant = new Plants();
-    //   newPlant.Name = name;
-    //   newPlant.Type = type;
-    //   newPlant.Height = height;
-    //   newPlant.Health = health;
-    //   newPlant.Water = water;
-    //   newPlant.Feed = feed;
-    //   newPlant.Sunshine = sunshine;
-    //   PlantList.Add(newPlant);
-
-     
-    //   Console.WriteLine(P);
-    // }
 
     public void GrowPlants()
     {
@@ -97,6 +75,6 @@ namespace Action.Models
         Health--;
       }
     }
-    
+  
   }
 }

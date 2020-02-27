@@ -7,6 +7,7 @@ namespace PlantCare
   public class Program
   {
     public static List<Plants> PlantList = new List<Plants>(){};
+
     public static void Main()
     {
       Console.WriteLine("Welcome to the Plant Grow Database!");
@@ -25,22 +26,62 @@ namespace PlantCare
       Console.WriteLine("How many times do you apply fertilize a month?");
       int feed = int.Parse(Console.ReadLine());
 
-
-
       Plants userPlant = new Plants(name, type, height, health, water, feed, sunshine);
       userPlant.GrowPlants();
       PlantList.Add(userPlant);
+      Console.WriteLine(userPlant.Name);
       ShowPlants();
-      Main();
+     
+      AddAction();
     }
-    static void ShowPlants()
+
+    public static void AddAction()
+    {
+      Console.WriteLine("Would you like to Keep caring your plants or Add new plant or finish? [keep/ add/ finish]");
+      string actionResponse = Console.ReadLine();
+      
+      if (actionResponse == "keep")
+      {
+        // SearchPlants();
+        Console.WriteLine("Which plant would you like to Care for?");
+        string searchName = Console.ReadLine();
+        foreach (Plants foliage in PlantList)
+        {
+          if (foliage.Name == searchName)
+            {
+              Console.WriteLine("\n--------------------------");
+              Console.WriteLine("How much water do you give the plant a week?");
+              int water = int.Parse(Console.ReadLine());
+              Console.WriteLine("How many times do you apply fertilize a month?");
+              int feed = int.Parse(Console.ReadLine());
+              foliage.GrowPlants();
+              ShowEachPlants();
+              AddAction();
+            } 
+          else
+          {
+
+          }
+        }    
+      }
+      else if (actionResponse == "add")
+      {
+        Main();
+      }
+      else if(actionResponse == "finish")
+      {
+        Console.WriteLine("Goodbye.");
+      }
+    }
+
+    public static void ShowPlants()
     {
       foreach (Plants foliage in PlantList)
       {
-        Console.WriteLine("--------------------------");
+        Console.WriteLine("\n--------------------------");
         Console.WriteLine($"Name: {foliage.Name}");
         Console.WriteLine($"Height: {foliage.Height}");
-        Console.WriteLine($"Health: {foliage.Health}");
+        Console.WriteLine($"Health: {foliage.Health}\n");
       }
     }
   }
